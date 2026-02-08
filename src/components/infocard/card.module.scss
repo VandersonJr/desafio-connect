@@ -1,0 +1,56 @@
+@use "../../globalSyle.scss" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 90%;
+
+  @media (width >= 1024px) {
+    position: relative;
+    padding: 2rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10%;
+      right: 0;
+      width: 1px;
+      height: 80%;
+      background-color: #cbcbcb;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+.card__title {
+  font-size: 2rem;
+}
+.card__text {
+  font-size: 1rem;
+  color: $color-font;
+  font-family: $font-third;
+  width: 80%;
+}
+.card__button {
+  width: 200px;
+  background-color: $color-principal;
+  color: $color-white;
+  font-family: $font-title;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: auto; /* Essa margem empurra o botão para o final do card */
+
+  &:hover {
+    background-color: $color-hover;
+  }
+}
